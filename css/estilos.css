@@ -1,0 +1,124 @@
+html, body{
+    font-family:Arial, sans-serif;  
+    height:100%;
+    width:100%;
+    margin: 0px;
+  }
+  
+  nav {
+    background: rgba(0,0,0,0.9);
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    top: 0px;
+  }
+          
+  nav ul {
+    list-style:none;
+  }
+        
+  nav li {
+    position: relative;
+  }
+  
+  nav li ul{
+    list-style:none;
+    position: absolute;
+  }
+        
+  nav a {
+    color: #FFFFFF;
+    display: block;
+    text-decoration:none;
+    padding: 20px;
+  }
+  
+  nav a:hover{
+    background: rgb(0, 255, 191);
+  }
+        
+  nav li ul{
+    display: none;
+    padding: 0;
+  }
+  
+  nav li:hover >ul{
+    display: block;
+  }
+        
+  /*Primer nivel*/
+  nav > ul{
+    
+    display: table;
+    width: 100%;
+  }
+  nav >ul >li{
+    float: left;
+  
+  }
+  
+  /*Segundo nivel*/
+  nav li li{
+    top: 16px;
+    background: rgba(0,0,0,0.9);
+    width: 150px;
+  }
+  
+  nav >ul >li >ul{
+    top: 100%;
+  }
+  
+  /*Video YouTube*/
+  .video-responsive {
+  position: relative;
+  padding-bottom: 56.25%; 
+  padding-top: 30px; 
+  height: 0;
+  overflow: hidden;
+  }
+  
+  .video-responsive iframe,
+  .video-responsive object,
+  .video-responsive embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  }
+  
+  /*buttpn*/
+  input[type="button"] {
+    cursor:pointer;
+    width:10%;
+    border: 0.1px solid #FFFFFF;
+    background:red;
+    color:#FFF;
+    margin:0 0 5px;
+    padding:10px;
+    font-size:15px;
+  }
+  
+  input[type="button"]:hover {
+    background: #C0C0C0;
+    -webkit-transition:background 0.3s ease-in-out;
+    -moz-transition:background 0.3s ease-in-out;
+    transition:background-color 0.3s ease-in-out;
+  }
+  
+  input[type="button"]:active { box-shadow:inset 0 1px 3px rgba(0, 0, 0, 0.5); }
+  
+  .button{
+      border: none;
+      width: 20%;
+      color: white;
+      font-size: 20px;
+      background:  #1a2537;
+      padding: 3px 120px;
+      border-radius: 0.1px;
+      cursor: pointer;
+      text-align: center;
+  }
+  .button:hover{
+      background: red;
+  }

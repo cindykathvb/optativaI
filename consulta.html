@@ -1,0 +1,145 @@
+<html>
+  <head>
+    <title></title>
+    <meta content="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style></style>
+    <script type="text/javascript">
+    (function(document) {
+      'use strict';
+
+      var LightTableFilter = (function(Arr) {
+
+        var _input;
+
+        function _onInputEvent(e) {
+          _input = e.target;
+          var tables = document.getElementsByClassName(_input.getAttribute('data-table'));
+          Arr.forEach.call(tables, function(table) {
+            Arr.forEach.call(table.tBodies, function(tbody) {
+              Arr.forEach.call(tbody.rows, _filter);
+            });
+          });
+        }
+
+        function _filter(row) {
+          var text = row.textContent.toLowerCase(), val = _input.value.toLowerCase();
+          row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
+        }
+
+        return {
+          init: function() {
+            var inputs = document.getElementsByClassName('light-table-filter');
+            Arr.forEach.call(inputs, function(input) {
+              input.oninput = _onInputEvent;
+            });
+          }
+        };
+      })(Array.prototype);
+
+      document.addEventListener('readystatechange', function() {
+        if (document.readyState === 'complete') {
+          LightTableFilter.init();
+        }
+      });
+
+    })(document);
+    </script>
+  </head>
+  <body>
+
+    <a  class="btn btn-dark" href="login.html">CERRAR SESION</a>
+    
+
+    <div class="container">
+      <div style="height:50px"></div>
+      
+
+
+      <input class="form-control col-md-3 light-table-filter" data-table="order-table" type="text" placeholder="Search..">
+      <hr>
+
+      <table class="table table-bordered order-table ">
+        <thead>
+          <tr>
+            <th>CLIENTE</th>
+            <th>PRODUCTO</th>
+            <th>FECHA</th>
+            <th>HORA</th>
+            <th>ESTADO</th>
+            <th></th>
+          </tr>
+
+        </thead>
+        <tr>
+          <td>Selena Moreira</td>
+          <td>Curso de Piano</td>
+          <td>26/07/2020</td>
+          <td>13:13 PM </td>
+          <td>CONFIRMADO</td>
+          <td><a class="btn btn-primary" href="estado.html">Editar</a>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Marcos Solorzano</td>
+          <td>Curso de Guitarra</td>
+          <td>24/07/2020</td>
+          <td>13:15 PM </td>
+          <td>ANULADO</td>
+          <td><a class="btn btn-primary" href="estado.html">Editar</a></td>
+        </tr>
+        <tr>
+          <td>Carlos Baque</td>
+          <td>Curso de Guitarra + Curso de Piano</td>
+          <td>19/07/2020</td>
+          <td>06:35 AM </td>
+          <td>ANULADO</td>
+          <td><a class="btn btn-primary" href="estado.html">Editar</a></td>
+        </tr>
+        <tr>
+          <td>Genesis Riviera</td>
+          <td>Curso de Ajedrez</td>
+          <td>15/07/2020</td>
+          <td>15:15 PM </td>
+          <td>CONFIRMADO</td>
+          <td><a class="btn btn-primary" href="estado.html">Editar</a></td>
+        </tr>
+        <tr>
+          <td>Daniela Mendoza</td>
+          <td>Curso de Ajedrez + Curso de Damas Chinas</td>
+          <td>16/07/2020</td>
+          <td>11:56 AM </td>
+          <td>CONFIRMADO</td>
+         <td><a class="btn btn-primary" href="estado.html">Editar</a></td>
+        </tr>
+        <tr>
+         <td>Victor Molina</td>
+          <td>Curso de Damas Chinas</td>
+          <td>22/06/2020</td>
+          <td>13:47 PM </td>
+          <td>ANULADO</td>
+          <td><a class="btn btn-primary" href="estado.html">Editar</a></td>
+        </tr>
+        <tr>
+          <td>Jordan Zambrano</td>
+          <td>curso de Guitarra</td>
+          <td>19/07/2020</td>
+          <td>16:13 PM </td>
+          <td>CONFIRMADO</td>
+          <td><a class="btn btn-primary" href="estado.html">Editar</a></td>
+        </tr>
+        <tr>
+          <td>Jerry Loor</td>
+          <td>Curso de Piano</td>
+          <td>2/07/2020</td>
+          <td>11:20 AM </td>
+          <td>CONFIRMADO</td>
+          <td><a class="btn btn-primary" href="estado.html">Editar</a></td>
+        </tr>
+      </table>
+
+    </div> <!-- /container -->
+
+  </body>
+</html>
